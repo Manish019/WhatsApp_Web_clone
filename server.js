@@ -9,7 +9,7 @@ import convRouter from './routes/conversations.js';
 
 const app = express();
 //app.use(cors({ origin: "http://localhost:5173" }));
-app.use(cors({ origin: "https://whats-app-web-front-end.vercel.app/" }));
+app.use(cors({ origin: "https://whats-app-web-front-end.vercel.app" }));
 
 app.use(express.json({ limit: '5mb' }));
 
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 // Create HTTP + Socket.io server
 const server = http.createServer(app);
   const io = new SocketIOServer(server, {
-  cors: { origin: 'https://whats-app-web-front-end.vercel.app/', methods: ['GET', 'POST'] }
+  cors: { origin: 'https://whats-app-web-front-end.vercel.app', methods: ['GET', 'POST'] }
 });
 app.set('io', io);
 // Socket.io events
