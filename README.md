@@ -1,6 +1,6 @@
-📌 WhatsApp Web Clone – Backend
-This is the backend API for the WhatsApp Web Clone project.
-It is built with Node.js, Express.js, MongoDB, and Socket.IO for real-time messaging.
+# WhatsApp Web Clone – Backend
+  This is the backend API for the WhatsApp Web Clone project.
+  It is built with Node.js, Express.js, MongoDB, and Socket.IO for real-time messaging.
 🚀 Features
 📩 Send & Receive Messages in real-time using Socket.IO
 📜 Store chat messages in MongoDB
@@ -16,7 +16,7 @@ git clone <your-repo-url>
 cd backend
 * npm install
 * npm start
-Backend will start on http://localhost:5000
+* Backend will start on http://localhost:5000
 
 
 
