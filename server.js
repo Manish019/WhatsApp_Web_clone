@@ -4,7 +4,7 @@ import http from "http";
 import { Server as SocketIOServer } from "socket.io";
 import webhookRouter from "./routes/webhook.js";
 import convRouter from "./routes/conversations.js";
-import "./database/DB.js"; 
+import "./Data/db.js"; 
 
 const app = express();
 //app.use(cors({ origin: "http://localhost:5173" }));
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
-  // cors: { origin: "http://localhost:5173", methods: ["GET", "POST"] }
+   //cors: { origin: "http://localhost:5173", methods: ["GET", "POST"] }
   cors: { origin: "https://whats-app-web-front-end.vercel.app", methods: ["GET", "POST"] }
 
 });
