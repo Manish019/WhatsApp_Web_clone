@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import mongoose from 'mongoose';
-import Message from '../models/Message.js';
+import Message from './models/Message.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -43,14 +43,10 @@ function parsePayload(payload) {
 (async function run() {
   try {
     await mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://arayanmanish:bHkWOxVoBYnoy5il@cluster0.3xtjatq.mongodb.net/whatsapp');
-
     const files = await fs.readdir(FOLDER);
-
     for (const f of files) {
       if (!f.endsWith('.json')) continue;
-
       const content = JSON.parse(await fs.readFile(path.join(FOLDER, f), 'utf8'));
-
       const { messages, statuses } = parsePayload(content);
 
       // Messages insert
